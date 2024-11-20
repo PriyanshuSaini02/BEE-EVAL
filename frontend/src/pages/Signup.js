@@ -4,6 +4,7 @@ import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar';
 import { useRef } from 'react';
+import Cookies from 'js-cookie'; // Import js-cookie
 
 
 function Signup() {
@@ -16,7 +17,7 @@ function Signup() {
 
   // pervent login again
   useEffect(()=>{
-    if(localStorage.getItem("User"))
+    if (Cookies.get('User'))
     {
       navigate("/");
     }
